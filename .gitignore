@@ -1,0 +1,4 @@
+app-src
+.DS_Store
+.idea
+.env
