@@ -32,6 +32,6 @@ services:
       - ./app-src:/react-app
     working_dir: /react-app
     stdin_open: true
-    entrypoint: ['npm', 'create-react-app', 'react-app']
+    entrypoint: ['npm']
     networks:
       - react
