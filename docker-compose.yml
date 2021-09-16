@@ -35,3 +35,13 @@ services:
     entrypoint: ['npm']
     networks:
       - react
+
+  npx:
+    image: node:alpine
+    volumes:
+      - ./app-src:/react-app
+    working_dir: /react-app
+    stdin_open: true
+    entrypoint: ['npx']
+    networks:
+      - react

@@ -15,6 +15,7 @@ After that completes, you now have a react dev server running. The react app sou
 
 Bringing up the Docker Compose network with `react-app` instead of just using `up`, ensures that only our site's containers are brought up at the start, instead of all of the command containers as well.
 
-An additional container is included that handle npm commands *without* having to have it installed on your local computer. Use the following command examples from your project root, modifying them to fit your particular use case.
+Additional containers are included that handle npm commands *without* having to have it installed on your local computer. Use the following command examples from your project root, modifying them to fit your particular use case.
 
 - `docker-compose run --rm npm "command goes here without the quotes"`
+- `docker-compose run --rm npx "command goes here without the quotes"`
