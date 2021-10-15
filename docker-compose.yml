@@ -36,6 +36,18 @@ services:
     networks:
       - react
 
+  frontend-web:
+    image: node:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app-src:/react-app
+    working_dir: /react-app
+    stdin_open: true
+    command: "sh -c 'npm run build && npx serve -s build -l 3000;'"
+    networks:
+      - react
+
   npx:
     image: node:alpine
     volumes:
