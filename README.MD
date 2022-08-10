@@ -8,7 +8,7 @@ To get started, make sure you have [Docker installed](https://www.docker.com/get
 
 Next:
 1. Navigate in your terminal to the directory you cloned this.
-2. Run `docker-compose run --rm init` and respond with `y` when asked about creating a react app.
+2. Run `docker-compose run --rm init` and respond with `y` when asked about creating a react app. Use `docker-compose run --rm init-next` if you want a nextjs app.
 3. Spin up the container for the dev server by running `docker-compose up -d --build react-app`.
 4. Remove app-src from .gitignore
 
