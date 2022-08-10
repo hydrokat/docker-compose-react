@@ -26,6 +26,16 @@ services:
     networks:
       - react
 
+  init-next:
+    image: node:alpine
+    volumes:
+      - ./app-src:/react-app
+    working_dir: /
+    stdin_open: true
+    entrypoint: ['npx', 'create-next-app@latest', 'react-app', '--typescript']
+    networks:
+      - react
+
   npm:
     image: node:alpine
     volumes:
