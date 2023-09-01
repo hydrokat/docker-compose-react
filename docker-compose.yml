@@ -3,6 +3,7 @@ version: '3'
 networks:
   react:
 
+
 services:
   react-app:
     image: node:alpine
@@ -12,7 +13,7 @@ services:
       - ./app-src:/react-app
     working_dir: /react-app
     stdin_open: true
-    entrypoint: ['npm', 'start']
+    entrypoint: [ 'npm', 'run', 'dev' ]
     networks:
       - react
 
@@ -22,7 +23,7 @@ services:
       - ./app-src:/react-app
     working_dir: /
     stdin_open: true
-    entrypoint: ['npx', 'create-react-app', 'react-app']
+    entrypoint: [ 'npx', 'create-react-app', 'react-app' ]
     networks:
       - react
 
@@ -32,7 +33,13 @@ services:
       - ./app-src:/react-app
     working_dir: /
     stdin_open: true
-    entrypoint: ['npx', 'create-next-app@latest', 'react-app', '--typescript']
+    entrypoint:
+      [
+        'npx',
+        'create-next-app@latest',
+        'react-app',
+        '--typescript'
+      ]
     networks:
       - react
 
@@ -42,7 +49,7 @@ services:
       - ./app-src:/react-app
     working_dir: /react-app
     stdin_open: true
-    entrypoint: ['npm']
+    entrypoint: [ 'npm' ]
     networks:
       - react
 
@@ -64,6 +71,6 @@ services:
       - ./app-src:/react-app
     working_dir: /react-app
     stdin_open: true
-    entrypoint: ['npx']
+    entrypoint: [ 'npx' ]
     networks:
       - react
