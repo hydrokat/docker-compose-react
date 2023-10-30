@@ -3,6 +3,7 @@ version: '3'
 networks:
   react:
 
+
 services:
   react-app:
     image: node:alpine
@@ -12,7 +13,19 @@ services:
       - ./app-src:/react-app
     working_dir: /react-app
     stdin_open: true
-    entrypoint: ['npm', 'start']
+    entrypoint: [ 'npm', 'run', 'dev' ]
+    networks:
+      - react
+
+  prod:
+    image: node:alpine
+    ports:
+      - 80:3000
+    volumes:
+      - ./app-src:/react-app
+    working_dir: /react-app
+    stdin_open: true
+    command: "sh -c 'npm run build && npm start;'"
     networks:
       - react
 
@@ -22,7 +35,7 @@ services:
       - ./app-src:/react-app
     working_dir: /
     stdin_open: true
-    entrypoint: ['npx', 'create-react-app', 'react-app']
+    entrypoint: [ 'npx', 'create-next-app@latest', 'react-app' ]
     networks:
       - react
 
@@ -32,7 +45,7 @@ services:
       - ./app-src:/react-app
     working_dir: /react-app
     stdin_open: true
-    entrypoint: ['npm']
+    entrypoint: [ 'npm' ]
     networks:
       - react
 
@@ -54,6 +67,6 @@ services:
       - ./app-src:/react-app
     working_dir: /react-app
     stdin_open: true
-    entrypoint: ['npx']
+    entrypoint: [ 'npx' ]
     networks:
       - react

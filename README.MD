@@ -1,6 +1,8 @@
 # docker-compose-react
 A pretty simplified Docker Compose workflow that sets up a react app.
 
+Latest changed remove CRA. Preferred installation is now nextjs
+
 
 ## Usage
 
